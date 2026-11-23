@@ -1,0 +1,142 @@
+// Write and run C++ online using this editor.
+//Write a program to convert Celsius to Fahrenheit using class.The application uses dynamic memory allocation inside the parametrize constructor
+
+#include <iostream>
+using namespace std;
+class Temperature{
+    float *celsius;
+    public:
+        Temperature(float c){
+        celsius=new float;
+        *celsius=c;
+        }
+    void Convert(){
+        float fahrenheit;
+        fahrenheit=(*celsius * 9/5)+32;
+        cout<<"Temperature in Celsius: " <<*celsius<<endl;
+        cout<<"Temperature in Fahrenheit: "<< fahrenheit<<endl;
+ 
+    }
+    ~Temperature(){
+        delete celsius;
+    }
+};
+
+int main() {
+    // Write C++ code here
+    float c;
+    cout<<"Enter temperature in Celsius: " ;
+    cin>>c;
+    Temperature t(c);
+    t.Convert();
+ 
+    return 0;
+}
+//Output
+Enter temperature in Celsius: 37
+Temperature in Celsius: 37
+Temperature in Fahrenheit: 98.6
+//Division by zero
+// Online C++ compiler (editor)
+// Write and run C++ online using this editor.
+#include <iostream>
+using namespace std;
+int main(){
+    int n1,n2,result;
+    cout<<"Enter 1st number: ";
+    cin>>n1;
+    cout<<"Enter 2nd number: ";
+    cin>>n2;
+    try{
+        if(n2==0){
+            throw n2;
+        }
+        else {
+            result=n1/n2;
+            cout<<"The result is: "<<result;
+        }
+ 
+    }
+        catch(int x){
+            cout<<"\n Can't divide by: "<<x;
+        }
+    cout<<"End of the program..";
+}
+//output
+Enter 1st number: 10
+Enter 2nd number: 2
+The result is: 5
+End of the program..
+//If age is less than age then that is eligible and allowed...if age>18 not allowed
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int age;
+    cout << "Age: ";
+    cin >> age;
+
+    try {
+        if (age > 18) {
+            throw age;
+        }
+        else if (age < 18) {
+            cout << "Allowed: " << age;
+        }
+        else {
+            cout << "Age is exactly 18";
+        }
+    }
+    catch (int x) {
+        cout << "Not allowed: " << x;
+    }
+
+    cout << "\nEnd of the program...";
+
+    return 0;
+}
+//output
+Age: 15
+Allowed: 15
+End of the program...
+Age: 20
+Not allowed: 20
+End of the program...
+Age: 18
+Age is exactly 18
+End of the program...
+//Accessing elements and if it is not there throw error
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[5] = {10, 20, 30, 40, 50};
+    int index;
+
+    cout << "Enter index number: ";
+    cin >> index;
+
+    try {
+        if (index >= 5 || index < 0)
+            throw index;
+
+        cout << "Array element: " << arr[index];
+    }
+    catch (int x) {
+        cout << "Error: Array index " << x
+             << " is out of bounds!";
+    }
+
+    cout << "\nEnd of program.";
+
+    return 0;
+}
+//output
+Enter index number: 2
+Array element: 30
+End of program.
+Enter index number: 5
+ERROR!
+Error: Array index 5 is out of bounds!
+End of program.
