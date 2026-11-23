@@ -61,6 +61,7 @@ I'm learning to become a **full stack developer**.
 | 41 | Debate on traditional vs online learning |
 | 42 | Added profile and image upload features |
 | 43 | Add C++ examples for file handling and OOP concepts |
+| 44 | Basics of exception handling in cpp |
 ## Goal
 Commit something real every day and build a deployed full stack project.
 Be the better version of you  from the yesterday.....
