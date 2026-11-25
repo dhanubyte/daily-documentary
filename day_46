@@ -1,0 +1,188 @@
+// 25/11/2026
+// Online C++ compiler (editor)
+// Write and run C++ online using this editor.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Write C++ code here
+    int age;
+    cout<<"Age: ";
+    cin>>age;
+    try{
+        if(age<18){
+            throw age;
+        }
+        else{
+            cout<<"Yes, age is older: "<< age <<endl;
+ 
+ 
+        }
+    }
+    catch(int x){
+        cout<<"No, age is small than required age "<<x<<endl;
+    }
+    cout<<"End of the program...";
+ 
+    return 0;
+}
+//Output
+case 1:
+Age: 28
+Yes, age is older: 28
+End of the program...
+case 2:
+Age: 10
+No, age is small than required age 10
+End of the program...
+//Problem statement
+//Nisha is learning about virtual functions and virtual destructors in c++.She creates an abstract base class Shape with a pure virtual method area() and a virtual destructor.Two concrete derived classes are created: Circle (uses radius) and Rectangle(uses width and height).A base class pointer is used to create the appropriate derived object dynamically.The area is computed via the virtual function, printed, and the object is deleted.The virtual destructor ensures the correct destructor is called.
+//The shape of an object type is either "Circle" or "Rectangle".
+//Formula: circle area =3.14 * radius * radius
+//Rectangle area =width*height
+
+#include <iostream>
+using namespace std;
+
+// Abstract Base Class
+class Shape {
+public:
+    virtual double area() = 0;
+
+    virtual ~Shape() {
+        cout << "Shape destructor called" << endl;
+    }
+};
+
+// Derived Class: Circle
+class Circle : public Shape {
+    double radius;
+
+public:
+    Circle(double r) {
+        radius = r;
+    }
+
+    double area() {
+        return 3.14 * radius * radius;
+    }
+
+    ~Circle() {
+        cout << "Circle destructor called" << endl;
+    }
+};
+
+// Derived Class: Rectangle
+class Rectangle : public Shape {
+    double width, height;
+
+public:
+    Rectangle(double w, double h) {
+        width = w;
+        height = h;
+    }
+
+    double area() {
+        return width * height;
+    }
+
+    ~Rectangle() {
+        cout << "Rectangle destructor called" << endl;
+    }
+};
+
+int main() {
+    Shape* ptr;
+    int choice;
+
+    cout << "1. Circle" << endl;
+    cout << "2. Rectangle" << endl;
+    cout << "Enter your choice: ";
+    cin >> choice;
+
+    if (choice == 1) {
+        double radius;
+        cout << "Enter radius: ";
+        cin >> radius;
+
+        ptr = new Circle(radius);
+
+        cout << "Area of Circle: " << ptr->area() << endl;
+    }
+    else if (choice == 2) {
+        double width, height;
+
+        cout << "Enter width and height: ";
+        cin >> width >> height;
+
+        ptr = new Rectangle(width, height);
+
+        cout << "Area of Rectangle: " << ptr->area() << endl;
+    }
+    else {
+        cout << "Invalid choice";
+        return 0;
+    }
+
+    delete ptr;
+
+    return 0;
+}
+//output
+case 1:
+1. Circle
+2. Rectangle
+Enter your choice: 2
+Enter width and height: 4 5
+Area of Rectangle: 20
+Rectangle destructor called
+Shape destructor called
+case 2:
+1. Circle
+2. Rectangle
+Enter your choice: 1
+Enter radius: 3
+Area of Circle: 28.26
+Circle destructor called
+Shape destructor called
+case 3:
+1. Circle
+2. Rectangle
+Enter your choice: 3
+Invalid choice
+#include<iostream>
+using namespace std;
+int main(){
+    int a=2;
+    try{
+        if(a==1) throw a;
+        else if(a==2) throw 'A';
+        else if(a==3) throw 4.5;
+    }
+    catch(int a){
+        cout<<"\nInteger exception caught";
+    }
+    catch(char ch){
+        cout<<"\nCharacter exception caught";
+    }
+    catch (double d){
+        cout<<"\nDouble exception caught";
+    }
+    cout<<"\nEnd of program.";
+ 
+}
+// Output
+case 1: if a=3
+Double exception caught
+End of program.
+case 2: if a=1
+Integer exception caught
+End of program.
+case 3: if a=2
+Character exception caught
+End of program.
+computer networks practise test about different types of topologies and OSI  reference model
+Discrete Maths Decision tree ,tree traversal,pre,post,In order traversal of a tree ....prefix,postfix and infix notations ....
+Linkedin profile update and badge from matiks i.e is November Quest challenge ...
+  
