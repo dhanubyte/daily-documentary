@@ -63,6 +63,7 @@ I'm learning to become a **full stack developer**.
 | 43 | Add C++ examples for file handling and OOP concepts |
 | 44 | Basics of exception handling in cpp |
 | 45 | GEN231 preparation, asking feedback and suggestion from sister|
+| 46 | C++ programming questions and Decision tree and notations |
 ## Goal
 Commit something real every day and build a deployed full stack project.
 Be the better version of you  from the yesterday.....
