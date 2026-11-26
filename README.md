@@ -64,6 +64,7 @@ I'm learning to become a **full stack developer**.
 | 44 | Basics of exception handling in cpp |
 | 45 | GEN231 preparation, asking feedback and suggestion from sister|
 | 46 | C++ programming questions and Decision tree and notations |
+| 47 | C++ practise questions and Transmission media |
 ## Goal
 Commit something real every day and build a deployed full stack project.
 Be the better version of you  from the yesterday.....
