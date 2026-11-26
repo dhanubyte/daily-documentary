@@ -1,0 +1,172 @@
+Cpp practise test 
+  1.”Design an abstract Shape class with a pure virtual area() function.Create Circle and Rectangle classes.Input the shape of name,then two numbers.For circle,the second number is 0;for rectangle ,they are width and height .Display area to two decimal places and show destructor messages when deleting through Shape.”
+
+Sol:
+#include <iostream>
+#include <iomanip>
+using namespace std;
+class Shape {
+public:
+    virtual double area() = 0;
+
+    virtual ~Shape() {
+        cout << "Shape destructor called" << endl;
+    }
+};
+class Circle : public Shape {
+    double r;
+
+public:
+    Circle(double radius) {
+        r = radius;
+    }
+
+    double area() override {
+        return 3.14 * r * r;
+    }
+
+    ~Circle() {
+        cout << "Circle destructor called" << endl;
+    }
+};
+class Rectangle : public Shape {
+    double w, h;
+
+public:
+    Rectangle(double width, double height) {
+        w = width;
+        h = height;
+    }
+
+    double area() override {
+        return w * h;
+    }
+
+    ~Rectangle() {
+        cout << "Rectangle destructor called" << endl;
+    }
+};
+
+int main() {
+    string name;
+    double a, b;
+
+    Shape* s = nullptr;
+
+    cout << "Enter shape name: ";
+    cin >> name;
+
+    cout << "Enter two numbers: ";
+    cin >> a >> b;
+
+    if (name == "Circle" || name == "circle") {
+        s = new Circle(a);
+    }
+    else if (name == "Rectangle" || name == "rectangle") {
+        s = new Rectangle(a, b);
+    }
+    else {
+        cout << "Invalid shape";
+        return 0;
+    }
+
+    cout << fixed << setprecision(2);
+
+    cout << "Area of " << name << " = " << s->area() << endl;
+
+    delete s;
+
+    return 0;
+}
+//Output
+case 1:
+Enter shape name: rectangle
+Enter two numbers: 2 3
+Area of rectangle = 6.00
+Rectangle destructor called
+Shape destructor called
+case 2:
+Enter shape name: circle
+Enter one number: 2
+Area of circle = 12.56
+Circle destructor called
+Shape destructor called
+
+
+
+
+2. A student enters N values and wants their sum.Allocate an integer array dynamically using new [] read its elements,calculate the sum,display Sum:<value>, and release the array with delete[].Assume n is between 2 and 5...
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Write C++ code here
+    int n, sum=0;
+    cin>>n;
+    int *arr = new int[n];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    for(int i=0;i<n;i++){
+        sum+=arr[i];
+    }
+    cout<<"Sum: "<<sum<<endl;
+    delete[] arr;
+
+    return 0;
+}
+//Input and output
+4
+10 20 20 20
+Sum:70
+//Computer netwroks practise test 
+Explain about the guided and unguided media and its types 
+  
+1. Transmission Media
+Definition: Transmission media is the physical path through which data travels from a sender to a receiver in a computer network.
+
+There are two main types
+A. Guided Transmission Media
+In guided media, signals travel through a physical cable.
+There are three types:
+1. Twisted Pair Cable
+- Consists of two insulated copper wires twisted together.
+- Twisting reduces electromagnetic interference.
+- Commonly used in LAN networks.
+- Types: UTP and STP.
+Example: Ethernet cable.
+
+2. Coaxial Cable
+- Contains a central copper conductor.
+- Surrounded by insulation, metallic shielding and an outer cover.
+- Provides better shielding against interference than ordinary twisted-pair cable.
+Example: Cable television.
+
+3. Optical Fiber Cable
+- Transmits data using light signals.
+- Has a core and cladding.
+- Provides high bandwidth and high-speed communication.
+- Not affected by electromagnetic interference.
+Example: High-speed internet connections.
+B. Unguided Transmission Media
+In unguided media, signals travel through air or space without physical cables.
+1. Radio Waves
+- Travel in different directions.
+- Can pass through walls depending on frequency.
+- Used in radio broadcasting and Wi-Fi.
+2. Microwaves
+- Usually travel in straight lines.
+- Require line-of-sight communication.
+- Used in satellite and mobile communication.
+3. Infrared Waves
+- Used for short-distance communication.
+- Usually cannot pass through walls.
+- Example: TV remote controls.
+Difference between Guided and Unguided Media
+Guided	Unguided
+Uses physical cables	Uses wireless signals
+More controlled transmission path	Travels through air or space
+Examples: Fiber, coaxial	
+Installation may require cables	Supports wireless communication
+Examples: Radio, microwave
+  
