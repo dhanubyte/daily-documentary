@@ -66,6 +66,7 @@ I'm learning to become a **full stack developer**.
 | 46 | C++ programming questions and Decision tree and notations |
 | 47 | C++ practise questions and Transmission media |
 | 48 | Top 10 skills in 20th centuary |
+| 49 | Adding new features in project |
 ## Goal
 Commit something real every day and build a deployed full stack project.
 Be the better version of you  from the yesterday.....
